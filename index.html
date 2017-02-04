@@ -17,6 +17,11 @@
             <nav class="cf" ng-include="'views/nav.html'"></nav>
       </header>
       <div class="page">
+            <!--The reason we assign RegistrationController here is because all our app are at the main section, no controller assigned here then we can not acces the rootScope-->
+            <div class="userinfo" ng-show="currentUser" ng-controller="RegistrationController">
+                  <span class="userinfo">Hi {{currentUser.firstname}}</span>
+                  <a ng-href="#!/login" ng-click="logout()">Logout</a>
+            </div>
             <main class="cf" ng-view>
             </main>
       </div>
